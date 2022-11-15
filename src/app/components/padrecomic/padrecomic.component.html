@@ -1,0 +1,32 @@
+<div >
+    <h1>Libreria Comic</h1>
+    <h2>{{mensaje}}</h2>
+    <div>
+        <form #comicForm="ngForm" (ngSubmit)="insertarComic()">
+            <label>Nombre:</label>
+            <input type="text"
+            name="cajanombre"
+            #cajanombre="ngModel"
+            [(ngModel)]="comic.nombre"/><br/>
+            <label>Imagen:</label>
+            <input type="text"
+            name="cajaimagen"
+            #cajaimagen="ngModel"
+            [(ngModel)]="comic.imagen"/><br/>
+            <label>Personaje:</label>
+            <input type="text"
+            name="cajapersonaje"
+            #cajapersonaje="ngModel"
+            [(ngModel)]="comic.personaje"/><br/>
+            <button style="background-color: green; color:white">
+                Insertar
+            </button>
+        </form>
+    </div>
+    <hr/>
+    <h1>Padre Comics</h1>
+    <div *ngFor="let comic of comics">
+        <app-hijocomic [comic]="comic" (seleccionarComic)="seleccionarComicPadre($event)"></app-hijocomic>
+    </div>
+    
+</div>

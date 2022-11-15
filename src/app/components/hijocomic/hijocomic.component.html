@@ -1,0 +1,14 @@
+<div>
+    <h1>{{comic.nombre}}</h1>
+    <h2>{{comic.personaje}}</h2>
+    <img src="{{comic.imagen}}" style="width: 150px;"/>
+    <button>
+        Modificar Comic
+    </button>
+    <button style="background-color: red; color:white;">
+        Borrar Comic
+    </button>
+    <button (click)="seleccionarFavoritoHijo()" style="background-color: green; color:white;">
+        Seleccionar Fav
+    </button>
+</div>
